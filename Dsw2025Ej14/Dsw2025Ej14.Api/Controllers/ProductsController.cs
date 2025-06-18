@@ -1,14 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc;
-using Dsw2025Ej14.Api.Data;
-using Dsw2025Ej14.Api.Domain;
+﻿using Microsoft.AspNetCore.Mvc;
 using Dsw2025Ej14.Api.Domain.Interfaces;
 
 namespace Dsw2025Ej14.Api.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
+    [ApiController] // atributo para saber que esto es un controlador de api, para que se mapee los endpoints
+    [Route("api/[controller]")] //este es la ruta general para todos, es algo general, en cada uno de los httpGet
     public class ProductsController : ControllerBase
     {
         private readonly IPersistencia _persistencia;
@@ -18,7 +14,7 @@ namespace Dsw2025Ej14.Api.Controllers
             _persistencia = persistencia;
         }
 
-        [HttpGet]
+        [HttpGet] //es la buena practica rest/protocolo http/ teoria de enrutamiento
         public IActionResult GetAllActiveProducts()
         {
             var products = _persistencia.GetAllActiveProducts();

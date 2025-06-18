@@ -1,7 +1,6 @@
 
 using Dsw2025Ej14.Api.Domain.Interfaces;
-using Dsw2025Ej14.Api.Data; // Asegúrate de tener este using
-using Microsoft.AspNetCore.Mvc;
+using Dsw2025Ej14.Api.Data;
 
 namespace Dsw2025Ej14.Api
 {
